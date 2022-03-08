@@ -23,7 +23,7 @@ const main = async () => {
   const workspaceYamlFile = './pnpm-workspace.yaml'
   const workspaceYaml = await fs.readFile(workspaceYamlFile, 'utf8')
   const workspace = yaml.load(workspaceYaml)
-  const newWorkspace = { packages: [...workspace.packages || [], `${name}/`] }
+  const newWorkspace = { packages: [...workspace?.packages || [], `${name}/`] }
   fs.writeFile(workspaceYamlFile, yaml.dump(newWorkspace))
 
   shell.exec(`pnpm --filter ${destinationDir} install`)
