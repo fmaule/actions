@@ -4,7 +4,7 @@ const yaml = require('js-yaml');
 
 const main = async () => {
     const secretsYamlFile = core.getInput('helm-secrets-yaml')
-    const secretsYaml = await fs.readFileSync(secretsYamlFile, 'utf8')
+    const secretsYaml = await fs.readFile(secretsYamlFile, 'utf8')
     const strippedYaml = secretsYaml.replace(/\{\{[^{}]*\}\}/g, '')
     const { stringData } = yaml.load(strippedYaml)
     const regexp = /\${(.*?)\}/
