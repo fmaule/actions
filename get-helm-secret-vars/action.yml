@@ -1,0 +1,13 @@
+name: 'Get secrets variable name'
+description: ''
+inputs:
+  helm-secrets-yaml:
+    description: 'Helm chart secrets file'
+    required: true
+    default: 'secrets.yaml'
+outputs:
+  secret-vars:
+    description: 'Secret variable names, separated by comma'
+runs:
+  using: 'node16'
+  main: 'index.js'
