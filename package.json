@@ -5,7 +5,7 @@
   "main": "create-action.js",
   "scripts": {
 		"new": "node create-action.js",
-    "buildall:prod": "pnpm run build:prod -r",
+    "buildall:release": "pnpm run build:release -r",
     "buildall:dev": "pnpm run build:dev -r"
   },
   "author": "Fernando A. Maule <fer@maule.pro>",
