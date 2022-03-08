@@ -1,0 +1,18 @@
+{
+  "name": "@fmaule/actions",
+  "version": "1.0.0",
+  "description": "Collection of Github actions",
+  "main": "create-action.js",
+  "scripts": {
+		"new": "node create-action.js",
+    "buildall:prod": "pnpm run build:prod -r",
+    "buildall:dev": "pnpm run build:dev -r"
+  },
+  "author": "Fernando A. Maule <fer@maule.pro>",
+  "license": "ISC",
+	"dependencies": {
+		"commander": "^9.0.0",
+		"js-yaml": "^4.1.0",
+		"shelljs": "^0.8.5"
+	}
+}
