@@ -5,7 +5,7 @@
   "main": "create-action.js",
   "scripts": {
     "new": "node create-action.js",
-    "buildall:release": "pnpm run build:release -r",
+    "buildall:release": "pnpm run lint && pnpm run build:release -r",
     "buildall:dev": "pnpm run build:dev -r",
     "lint": "eslint ."
   },
