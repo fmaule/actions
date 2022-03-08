@@ -1,0 +1,29 @@
+name: Publish
+
+on:
+  release:
+    types: [published, edited]
+  workflow_dispatch:
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: read 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.release.tag_name }}
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: 6.32.3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: pnpm install && pnpm run build:release
+      - uses: JasonEtco/build-and-tag-action@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

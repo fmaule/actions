@@ -1,10 +1,10 @@
 {
   "name": "inject-helm-secrets",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build:prod": "npx @vercel/ncc build src/index.js -o dist --license licenses.txt",
+    "build:release": "npx @vercel/ncc build src/index.js -o dist --license licenses.txt && npx @fmaule/convert-action",
     "build:dev": "ncc build src/index.js -o dist --source-map"
   },
   "author": "Fernando A. Maule <fer@maule.pro>",

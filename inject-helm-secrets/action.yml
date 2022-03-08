@@ -1,0 +1,21 @@
+name: Inject Helm secrets
+description: Inject secrets from JSON in Helm chart secrets
+inputs:
+  secrets-json:
+    description: 'Secrets object ([secret]: value) in a JSON string'
+    required: true
+  input-file:
+    description: Input file
+    required: true
+  output-file:
+    description: Output file
+    required: true
+  format-key:
+    description: >
+      Formats a key before replacing. Use the word `key` to refer to the
+      substitute key. Visit the README for examples.
+    default: '${key}'
+    required: false
+runs:
+  using: node16
+  main: src/index.js
