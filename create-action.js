@@ -1,5 +1,5 @@
 const { program } = require('commander');
-const shell = require("shelljs");
+const shell = require('shelljs');
 const fs = require('fs').promises
 const yaml = require('js-yaml')
 
@@ -25,6 +25,12 @@ const main = async () => {
   const workspace = yaml.load(workspaceYaml)
   const newWorkspace = { packages: [...workspace?.packages || [], `${name}/`] }
   fs.writeFile(workspaceYamlFile, yaml.dump(newWorkspace))
+
+  const actionYamlFile = `${destinationDir}/action.yml`
+  const actionYaml = await fs.readFile(actionYamlFile, 'utf8')
+  const action = yaml.load(actionYaml)
+  const newAction = { ...action, name, description: `${name} action` }
+  fs.writeFile(actionYamlFile, yaml.dump(newAction))
 
   shell.exec(`pnpm --filter ${destinationDir} install`)
 

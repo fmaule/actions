@@ -4,15 +4,19 @@
   "description": "Collection of Github actions",
   "main": "create-action.js",
   "scripts": {
-		"new": "node create-action.js",
+    "new": "node create-action.js",
     "buildall:release": "pnpm run build:release -r",
-    "buildall:dev": "pnpm run build:dev -r"
+    "buildall:dev": "pnpm run build:dev -r",
+    "lint": "eslint ."
   },
   "author": "Fernando A. Maule <fer@maule.pro>",
   "license": "ISC",
-	"dependencies": {
-		"commander": "^9.0.0",
-		"js-yaml": "^4.1.0",
-		"shelljs": "^0.8.5"
-	}
+  "dependencies": {
+    "commander": "^9.0.0",
+    "js-yaml": "^4.1.0",
+    "shelljs": "^0.8.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.10.0"
+  }
 }
