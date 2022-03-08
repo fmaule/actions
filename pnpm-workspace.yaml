@@ -1,2 +1,3 @@
 packages:
   - inject-helm-secrets/
+  - get-helm-secret-vars/
