@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 700:
+/***/ 146:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -28,7 +28,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issue = exports.issueCommand = void 0;
 const os = __importStar(__nccwpck_require__(37));
-const utils_1 = __nccwpck_require__(353);
+const utils_1 = __nccwpck_require__(410);
 /**
  * Commands
  *
@@ -100,7 +100,7 @@ function escapeProperty(s) {
 
 /***/ }),
 
-/***/ 967:
+/***/ 18:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -135,12 +135,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getIDToken = exports.getState = exports.saveState = exports.group = exports.endGroup = exports.startGroup = exports.info = exports.notice = exports.warning = exports.error = exports.debug = exports.isDebug = exports.setFailed = exports.setCommandEcho = exports.setOutput = exports.getBooleanInput = exports.getMultilineInput = exports.getInput = exports.addPath = exports.setSecret = exports.exportVariable = exports.ExitCode = void 0;
-const command_1 = __nccwpck_require__(700);
-const file_command_1 = __nccwpck_require__(113);
-const utils_1 = __nccwpck_require__(353);
+const command_1 = __nccwpck_require__(146);
+const file_command_1 = __nccwpck_require__(930);
+const utils_1 = __nccwpck_require__(410);
 const os = __importStar(__nccwpck_require__(37));
 const path = __importStar(__nccwpck_require__(17));
-const oidc_utils_1 = __nccwpck_require__(599);
+const oidc_utils_1 = __nccwpck_require__(893);
 /**
  * The code to exit an action
  */
@@ -419,7 +419,7 @@ exports.getIDToken = getIDToken;
 
 /***/ }),
 
-/***/ 113:
+/***/ 930:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -450,7 +450,7 @@ exports.issueCommand = void 0;
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const fs = __importStar(__nccwpck_require__(147));
 const os = __importStar(__nccwpck_require__(37));
-const utils_1 = __nccwpck_require__(353);
+const utils_1 = __nccwpck_require__(410);
 function issueCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
     if (!filePath) {
@@ -468,7 +468,7 @@ exports.issueCommand = issueCommand;
 
 /***/ }),
 
-/***/ 599:
+/***/ 893:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -484,9 +484,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.OidcClient = void 0;
-const http_client_1 = __nccwpck_require__(367);
-const auth_1 = __nccwpck_require__(364);
-const core_1 = __nccwpck_require__(967);
+const http_client_1 = __nccwpck_require__(968);
+const auth_1 = __nccwpck_require__(282);
+const core_1 = __nccwpck_require__(18);
 class OidcClient {
     static createHttpClient(allowRetry = true, maxRetry = 10) {
         const requestOptions = {
@@ -552,7 +552,7 @@ exports.OidcClient = OidcClient;
 
 /***/ }),
 
-/***/ 353:
+/***/ 410:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -599,7 +599,7 @@ exports.toCommandProperties = toCommandProperties;
 
 /***/ }),
 
-/***/ 364:
+/***/ 282:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -665,7 +665,7 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 
 /***/ }),
 
-/***/ 367:
+/***/ 968:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -673,7 +673,7 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const http = __nccwpck_require__(685);
 const https = __nccwpck_require__(687);
-const pm = __nccwpck_require__(116);
+const pm = __nccwpck_require__(905);
 let tunnel;
 var HttpCodes;
 (function (HttpCodes) {
@@ -1092,7 +1092,7 @@ class HttpClient {
         if (useProxy) {
             // If using proxy, need tunnel
             if (!tunnel) {
-                tunnel = __nccwpck_require__(66);
+                tunnel = __nccwpck_require__(300);
             }
             const agentOptions = {
                 maxSockets: maxSockets,
@@ -1210,7 +1210,7 @@ exports.HttpClient = HttpClient;
 
 /***/ }),
 
-/***/ 116:
+/***/ 905:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -1275,15 +1275,15 @@ exports.checkBypass = checkBypass;
 
 /***/ }),
 
-/***/ 66:
+/***/ 300:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = __nccwpck_require__(809);
+module.exports = __nccwpck_require__(739);
 
 
 /***/ }),
 
-/***/ 809:
+/***/ 739:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -1676,7 +1676,7 @@ module.exports = require("util");
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-const core = __nccwpck_require__(967);
+const core = __nccwpck_require__(18);
 const fs = (__nccwpck_require__(147).promises)
 const path = __nccwpck_require__(17)
 
@@ -1691,7 +1691,7 @@ const writeFile = async (filePath, data) => {
 const setOutputResult = async (result) => {
   core.setOutput('result', result)
 
-  const outputFile = core.getInput('_output-file')
+  const outputFile = core.getInput('output-file')
 
   if (outputFile) {
     await writeFile(outputFile, result)
@@ -1700,9 +1700,9 @@ const setOutputResult = async (result) => {
 }
 
 const main = async () => {
-  const inputFile = core.getInput('_input-file')
-  const secrets = JSON.parse(core.getInput('_secrets-json'))
-  const formatKey = core.getInput('_format-key')
+  const inputFile = core.getInput('input-file')
+  const secrets = JSON.parse(core.getInput('secrets-json'))
+  const formatKey = core.getInput('format-key')
 
   let secretsYaml = await fs.readFile(inputFile, 'utf8')
 

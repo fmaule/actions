@@ -13,7 +13,7 @@ const writeFile = async (filePath, data) => {
 const setOutputResult = async (result) => {
   core.setOutput('result', result)
 
-  const outputFile = core.getInput('_output-file')
+  const outputFile = core.getInput('output-file')
 
   if (outputFile) {
     await writeFile(outputFile, result)
@@ -22,9 +22,9 @@ const setOutputResult = async (result) => {
 }
 
 const main = async () => {
-  const inputFile = core.getInput('_input-file')
-  const secrets = JSON.parse(core.getInput('_secrets-json'))
-  const formatKey = core.getInput('_format-key')
+  const inputFile = core.getInput('input-file')
+  const secrets = JSON.parse(core.getInput('secrets-json'))
+  const formatKey = core.getInput('format-key')
 
   let secretsYaml = await fs.readFile(inputFile, 'utf8')
 
