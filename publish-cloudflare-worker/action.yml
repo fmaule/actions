@@ -1,0 +1,12 @@
+name: publish-cloudflare-worker
+description: publish-cloudflare-worker action
+inputs:
+  foo:
+    description: foo
+    required: false
+outputs:
+  bar:
+    description: bar
+runs:
+  using: node16
+  main: dist/index.js

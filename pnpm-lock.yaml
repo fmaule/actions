@@ -33,6 +33,14 @@ importers:
       '@actions/core': 1.6.0
       '@actions/github': 5.0.0
 
+  publish-cloudflare-worker:
+    specifiers:
+      '@actions/core': ^1.6.0
+      '@actions/github': ^5.0.0
+    dependencies:
+      '@actions/core': 1.6.0
+      '@actions/github': 5.0.0
+
 packages:
 
   /@actions/core/1.6.0:
